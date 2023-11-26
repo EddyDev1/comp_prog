@@ -25,14 +25,21 @@ int main(){
   string n;
   cin >> n;
 
-  int ans = -1, count = 0;
+  int ans = -1, l = 0, len = int(n.size());
+  unordered_map<char, int> window;
 
-  for(int r = 0; r < int(n.size())-1; ++r){
-    if(n[r] == n[r+1])
-      ++count;
-    else{
-      ans = max(ans, count);
-      count = 0;
+  for(int r = 0; r < len; ++r){
+    if(n[r] == n[r+1]){
+      l = r;
+
+      while(l < len && n[r] == n[l]){
+        window[n[r]]++;
+        ++l;
+      }
+      
+      ans = max(ans, window[n[r]]);
+      window[n[r]] = 0;
+      r = l;
     }
   }
 
