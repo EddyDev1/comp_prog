@@ -25,7 +25,7 @@ int main(){
   int tests;
   cin >> tests;
 
-  while(tests--){
+  while(tests-- > 0){
     run_case();
   }
 
