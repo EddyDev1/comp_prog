@@ -22,12 +22,15 @@ void run_case(){
 }
 
 int main(){
-  int tests;
-  cin >> tests;
+  int N;
+  cin >> N;
 
-  while(tests-- > 0){
-    run_case();
+  int64_t sum = 0, esum = N * (N+1) / 2, num;
+  for(int n=0; n<N-1; n++){
+    cin >> num;
+    sum += num;
   }
 
+  cout << esum - sum;
   return 0;
 }
