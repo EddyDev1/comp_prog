@@ -36,14 +36,17 @@ int main(){
         window[n[r]]++;
         ++l;
       }
-      
+
       ans = max(ans, window[n[r]]);
       window[n[r]] = 0;
-      r = l;
+      r = --l;
     }
   }
 
-  cout<<ans;
+  if(ans != -1)
+    cout<<ans;
+  else
+    cout<<1;
 
   return 0;
 }
