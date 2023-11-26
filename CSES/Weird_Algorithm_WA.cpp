@@ -22,7 +22,7 @@ void run_case(){
 }
 
 int main(){
-  int64_t N;
+  int N;
   cin>>N;
 
   while(N!=1){
