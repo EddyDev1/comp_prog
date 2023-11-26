@@ -25,12 +25,20 @@ int main(){
   int N;
   cin >> N;
 
-  int64_t sum = 0, esum = N * (N+1) / 2, num;
-  for(int n=0; n<N-1; n++){
-    cin >> num;
-    sum += num;
+  vector<int> nums(N-1);
+  int sum = 1;
+
+  for(auto& n : nums)
+    cin>>n;
+
+  sort(nums.begin(), nums.end());
+
+  for(int i = 2; i <= N; i++){
+    sum += i;
+    sum -= nums[i-2];
   }
 
-  cout << esum - sum;
+  cout<<sum;
+
   return 0;
 }
