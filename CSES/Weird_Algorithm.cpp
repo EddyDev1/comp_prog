@@ -28,10 +28,10 @@ int main(){
   while(N!=1){
     cout<<N<<' ';
     if(N%2==0){
-      N/=2;
+      N>>=1;
     } else {
       N*=3;
-      N+=1;
+      N++;
     }
   }
 
