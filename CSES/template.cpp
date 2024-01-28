@@ -17,6 +17,7 @@
 
 using namespace std;
 
+// usage: g++ -DNEAL_DEBUG file_name.cpp
 void dbg_out() { cerr << endl; }
 template <typename Head, typename... Tail> void dbg_out(Head H, Tail... T) {
   cerr << ' ' << H;
