@@ -22,16 +22,19 @@ void run_case(){
 }
 
 int main(){
-  int N, i = 0, ans = 0;
+  int N;
+  int64_t ans = 0;
+
   cin >> N;
-
-  vector<int> nums(N, 0);
-
+ 
+  vector<int64_t> nums(N, 0);
+ 
   for(auto& n : nums)
     cin >> n;
-
-  for (; i < N; ++i)
+ 
+  for (int i = 0; i < N; ++i)
   {
+
     if (i + 1 < N && nums[i + 1] < nums[i])
     {
       ans += abs(nums[i + 1] - nums[i]);
@@ -42,7 +45,7 @@ int main(){
       ans += abs(nums[i] - nums[i + 1]);
     }
   }
-
+ 
   cout << ans << '\n';
   return 0;
 }
