@@ -34,7 +34,6 @@ int main(){
  
   for (int i = 0; i < N; ++i)
   {
-
     if (i + 1 < N && nums[i + 1] < nums[i])
     {
       ans += abs(nums[i + 1] - nums[i]);
