@@ -17,6 +17,10 @@
 
 using namespace std;
 
+// output containers like vector easily with cerr/dbg
+template<typename A, typename B> ostream& operator<<(ostream &os, const pair<A, B> &p) { return os << '(' << p.first << ", " << p.second << ')'; }
+template<typename T_container, typename T = typename enable_if<!is_same<T_container, string>::value, typename T_container::value_type>::type> ostream& operator<<(ostream &os, const T_container &v) { os << '{'; string sep; for (const T &x : v) os << sep << x, sep = ", "; return os << '}'; }  
+
 // usage: g++ -DNEAL_DEBUG file_name.cpp
 void dbg_out() { std::cerr << endl; }
 template <typename Head, typename... Tail> void dbg_out(Head H, Tail... T) {
